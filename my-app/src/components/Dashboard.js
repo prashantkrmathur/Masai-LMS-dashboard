@@ -1,9 +1,26 @@
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from "../context/AuthContext"
 
 const Dashboard = () => {
+  const [error, setError] = useState('')
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
+
+  const handleLogout = async (event) => {
+    event.preventDefault();
+    setError('');
+    try {
+      await logout();
+      history.push('/login')
+    } catch (error) {
+      setError('Failed to log out')
+    }
+  }
   return (
     <Navbar bg="light" expand="lg" sticky='top'>
       <Navbar.Brand href="/dashboard">
@@ -24,16 +41,12 @@ const Dashboard = () => {
             <Nav.Link href="/courses">Courses</Nav.Link>
           </Nav>
           <Nav>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <NavDropdown title={currentUser && currentUser.email} id="basic-nav-dropdown">
+              <NavDropdown.Item disabled={true}>Manage account</NavDropdown.Item>
+              <NavDropdown.Item href="/profile">
+                Profile
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/logout" onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
 

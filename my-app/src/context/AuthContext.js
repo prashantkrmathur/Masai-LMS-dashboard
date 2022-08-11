@@ -20,6 +20,10 @@ const AuthProvider = ({ children }) => {
 
   }
 
+  const logout = () => {
+    return auth.signOut()
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
@@ -31,8 +35,8 @@ const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     signup,
-    login
-
+    login,
+    logout
   }
 
   return (

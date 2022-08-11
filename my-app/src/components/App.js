@@ -14,15 +14,17 @@ import Message from './Message'
 import Quizzes from './Quizzes'
 import Elective from './Elective'
 import Courses from './Courses'
+import Profile from './Profile'
 
 const App = () => {
   return (
     <Router>
       <AuthProvider>
         <Switch>
-          <Route exact path='/' component={Dashboard} />
+          <Route exact path='/' component={Login} />
           <Route path='/dashboard' component={Dashboard} />
           <Route path='/login' component={Login} />
+          <Route path='/profile' component={Profile} />
           <Route path="/signup" component={SignUp} />
           <Route path='/lectures' component={Lectures} />
           <Route path='/assigments' component={Assigment} />
