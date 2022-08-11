@@ -7,24 +7,35 @@ import Dashboard from './Dashboard'
 import Login from './Login'
 import Lectures from './Lectures'
 import Assigment from './Assigment'
+import Ticket from './Ticket'
+import Discussion from './Discussion'
+import Notification from './Notification'
+import Message from './Message'
+import Quizzes from './Quizzes'
+import Elective from './Elective'
+import Courses from './Courses'
 
 const App = () => {
   return (
-    <Container className='d-flex align-items-center justify-content-center' style={{ minHeight: '100vh' }}>
-      <div className='w-100' style={{ maxWidth: '400px' }}>
-        <Router>
-          <AuthProvider>
-            <Switch>
-              <Route exact path='/' component={Dashboard } />
-              <Route path='/login' component={Login} />
-              <Route path="/signup" component={SignUp} />
-              <Route path='/lectures' component={Lectures} />
-              <Route path='/assignments' component={Assigment} />
-            </Switch>
-        </AuthProvider>
-        </Router>
-      </div>
-    </Container>
+    <Router>
+      <AuthProvider>
+        <Switch>
+          <Route exact path='/' component={Dashboard} />
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/login' component={Login} />
+          <Route path="/signup" component={SignUp} />
+          <Route path='/lectures' component={Lectures} />
+          <Route path='/assigments' component={Assigment} />
+          <Route path='/quizzes' component={Quizzes} />
+          <Route path='/tickets' component={Ticket} />
+          <Route path='/discussion' component={Discussion} />
+          <Route path='/notifications' component={Notification} />
+          <Route path='/messages' component={Message} />
+          <Route path='/electives' component={Elective} />
+          <Route path='/courses' component={Courses} />
+        </Switch>
+      </AuthProvider>
+    </Router>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import Dashboard from './Dashboard'
 
 const Assigment = () => {
   return (
-    <div>Assigment</div>
+    <>
+      <Dashboard/>
+   </>
   )
 }
 

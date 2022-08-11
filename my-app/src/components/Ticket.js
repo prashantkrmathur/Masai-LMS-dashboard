@@ -1,12 +1,12 @@
 import React from 'react'
 import Dashboard from './Dashboard'
 
-const Lectures = () => {
+const Ticket = () => {
   return (
-    <>
-      <Dashboard />
+      <>
+          <Dashboard/>
     </>
   )
 }
 
-export default Lectures
+export default Ticket
