@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SignUp from './SignUp'
-import { Container } from "react-bootstrap"
 import AuthProvider from '../context/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard'
@@ -15,6 +14,8 @@ import Quizzes from './Quizzes'
 import Elective from './Elective'
 import Courses from './Courses'
 import Profile from './Profile'
+import "./Style.css"
+import DashboardData from './DashboardData'
 
 const App = () => {
   return (
