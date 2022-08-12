@@ -3,6 +3,7 @@ import SignUp from './SignUp'
 import AuthProvider from '../context/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard'
+import DashboardData from './DashboardData'
 import Login from './Login'
 import Lectures from './Lectures'
 import Assigment from './Assigment'
@@ -15,8 +16,6 @@ import Elective from './Elective'
 import Courses from './Courses'
 import Profile from './Profile'
 import "./Style.css"
-import DashboardData from './DashboardData'
-
 const App = () => {
   return (
     <Router>
