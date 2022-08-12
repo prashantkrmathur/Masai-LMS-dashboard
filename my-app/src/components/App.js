@@ -22,7 +22,7 @@ const App = () => {
       <AuthProvider>
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/dashboard' component={DashboardData} />
           <Route path='/login' component={Login} />
           <Route path='/profile' component={Profile} />
           <Route path="/signup" component={SignUp} />
